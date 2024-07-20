@@ -1,25 +1,26 @@
 <app-create-and-update-post [post]="postSelected" (onSubmit)="onSubmit($event)" />
 
-<table class="table table-dark table-hover my-5">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>USER ID</th>
-            <th>TITLE</th>
-            <th>BODY</th>
-            <th>ACTIONS</th>
+<table class="table table-hover my-5 caption-top">
+    <caption>List of posts</caption>
+    <thead class="thead-dark">
+        <tr class="grid text-center fs-5">
+            <th scope="col">ID</th>
+            <th scope="col">USER ID</th>
+            <th scope="col">TITLE</th>
+            <th scope="col">BODY</th>
+            <th scope="col">ACTIONS</th>
 
         </tr>
     </thead>
     <tbody>
         @for (post of listPosts$ | async ; track post.id) {
         <tr>
-            <td>{{ post.id }}</td>
+            <td class="text-center">{{ post.id }}</td>
             <td class="col-md-2 text-center">{{ post.userId }}</td>
-            <td class="fs-3">{{ post.title }}</td>
+            <td class="fs-5">{{ post.title }}</td>
             <td class="col-md text-center">{{ post.body }}</td>
             <td class="grid text-center ">
-                <button class="btn btn-info my-3" (click)="selectPost(post)"><i
+                <button class="btn btn-info m-3" (click)="selectPost(post)"><i
                         class="bi bi-pencil-square "></i></button>
                 <button class="btn btn-danger" (click)="deletePost(post)"><i class="bi bi-trash-fill"></i></button>
             </td>

@@ -4,14 +4,15 @@ import { PostsService } from '../../common/services/posts.service';
 import { Observable } from 'rxjs';
 import { Post } from '../../common/interfaces/posts.interface';
 import { CommonModule } from '@angular/common';
+import { CreateAndUpdatePostComponent } from './pages/create-post/create-and-update-post.component';
 
 @Component({
   selector: 'app-posts',
   standalone: true,
-  imports: [CommonModule],
   providers: [PostsFacade, PostsService],
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.sass',
+  imports: [CommonModule, CreateAndUpdatePostComponent],
 })
 export class PostsComponent {
   public postSelected: Post | undefined;

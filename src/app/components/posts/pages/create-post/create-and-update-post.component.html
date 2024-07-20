@@ -1,0 +1,17 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <div>
+        <label for="userId">User ID</label>
+        <input id="userId" type="number" placeholder="User ID" formControlName="userId">
+    </div>
+    <div>
+        <label for="title">Title</label>
+        <input id="title" type="text" placeholder="Some Title" formControlName="title">
+    </div>
+    <div>
+        <label for="body">Body</label>
+        <input id="body" type="text" placeholder="Some Body" formControlName="body">
+    </div>
+    <div>
+        <button type="submit">{{ isEdit ? 'Update' :'Create'}} Product</button>
+    </div>
+</form>

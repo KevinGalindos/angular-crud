@@ -12,15 +12,21 @@ import {
   postsFeatureName,
   postsReducers,
 } from './components/posts/store/posts.reducer';
+import { PhotosEffects } from './components/photos/store/photos.effects';
+import {
+  photosFeatureName,
+  photosReducers,
+} from './components/photos/store/photos.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
     provideClientHydration(),
     provideStore(),
-    provideEffects(PostEffects),
+    provideEffects(PostEffects, PhotosEffects),
     provideStoreDevtools({ maxAge: 25, logOnly: !isDevMode() }),
     provideState({ name: postsFeatureName, reducer: postsReducers }),
+    provideState({ name: photosFeatureName, reducer: photosReducers }),
     provideHttpClient(withFetch()),
   ],
 };

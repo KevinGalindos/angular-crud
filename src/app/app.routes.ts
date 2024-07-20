@@ -13,4 +13,11 @@ export const routes: Routes = [
         (m) => m.PostsComponent
       ),
   },
+  {
+    path: 'photos',
+    loadComponent: () =>
+      import('./components/photos/photos.component').then(
+        (m) => m.PhotosComponent
+      ),
+  },
 ];

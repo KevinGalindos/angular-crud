@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PostsFacade } from './posts.facade';
-import { PostsService } from '../../common/services/posts.service';
+import { PostsService } from '../../common/services/posts/posts.service';
 import { Observable } from 'rxjs';
 import { Post } from '../../common/interfaces/posts.interface';
 import { CommonModule } from '@angular/common';

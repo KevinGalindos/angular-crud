@@ -1,0 +1,3 @@
+@for (photo of listPhotos$ | async; track photo.id) {
+<img [src]="photo.thumbnailUrl" alt="photo" />
+}

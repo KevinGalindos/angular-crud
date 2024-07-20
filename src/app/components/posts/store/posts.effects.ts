@@ -3,7 +3,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import * as postsActions from './posts.actions';
 import { mergeMap, Observable, switchMap } from 'rxjs';
 import { Action } from '@ngrx/store';
-import { PostsService } from '../../../common/services/posts.service';
+import { PostsService } from '../../../common/services/posts/posts.service';
 
 @Injectable()
 export class PostEffects {

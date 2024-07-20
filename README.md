@@ -1,5 +1,13 @@
 # TestCrud
 
+- Clonar el proyecto `git clone`
+
+- Instalar dependencias`npm i`
+
+La url raiz es `/posts` y la url del llamado al endpoint de photos es `/photos`
+
+---
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.2.1.
 
 ## Development server

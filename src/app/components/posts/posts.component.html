@@ -1,0 +1,25 @@
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>USER ID</th>
+            <th>TITLE</th>
+            <th>BODY</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (post of listPosts$ | async ; track post.id) {
+        <tr>
+            <td>{{ post.id }}</td>
+            <td>{{ post.userId }}</td>
+            <td>{{ post.title }}</td>
+            <td>{{ post.body }}</td>
+            <td>
+                <button (click)="selectPost(post)">E</button>
+                <button (click)="deletePost(post)">D</button>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { Post } from '../../../common/interfaces/posts.interface';
 
-export const getListPosts = createAction('[Posts] Get List Products');
+export const getListPosts = createAction('[Posts] Get List Posts');
 
 export const getListPostsSuccessful = createAction(
   '[Posts] Get List Posts Successful',
@@ -10,9 +10,7 @@ export const getListPostsSuccessful = createAction(
   }>()
 );
 
-export const getListPostsFailed = createAction(
-  '[Posts] Get List Products Failed'
-);
+export const getListPostsFailed = createAction('[Posts] Get List Posts Failed');
 
 export const createPost = createAction(
   '[Posts] Create post',

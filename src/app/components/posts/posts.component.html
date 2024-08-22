@@ -1,30 +1,29 @@
 <app-create-and-update-post [post]="postSelected" (onSubmit)="onSubmit($event)" />
 
 <table class="table table-hover my-5 caption-top">
-    <caption>List of posts</caption>
-    <thead class="thead-dark">
-        <tr class="grid text-center fs-5">
-            <th scope="col">ID</th>
-            <th scope="col">USER ID</th>
-            <th scope="col">TITLE</th>
-            <th scope="col">BODY</th>
-            <th scope="col">ACTIONS</th>
+  <caption>List of posts</caption>
+  <thead class="thead-dark">
+    <tr class="grid text-center fs-5">
+      <th scope="col">ID</th>
+      <th scope="col">USER ID</th>
+      <th scope="col">TITLE</th>
+      <th scope="col">DESCRIPTION</th>
+      <th scope="col">ACTIONS</th>
 
-        </tr>
-    </thead>
-    <tbody>
-        @for (post of listPosts$ | async ; track post.id) {
-        <tr>
-            <td class="text-center">{{ post.id }}</td>
-            <td class="col-md-2 text-center">{{ post.userId }}</td>
-            <td class="fs-5">{{ post.title }}</td>
-            <td class="col-md text-center">{{ post.body }}</td>
-            <td class="grid text-center ">
-                <button class="btn btn-info m-3" (click)="selectPost(post)"><i
-                        class="bi bi-pencil-square "></i></button>
-                <button class="btn btn-danger" (click)="deletePost(post)"><i class="bi bi-trash-fill"></i></button>
-            </td>
-        </tr>
-        }
-    </tbody>
+    </tr>
+  </thead>
+  <tbody>
+    @for (post of listPosts$ | async ; track post.id) {
+    <tr>
+      <td class="text-center">{{ post.id }}</td>
+      <td class="col-md-2 text-center">{{ post.userId }}</td>
+      <td class="fs-5">{{ post.title }}</td>
+      <td class="col-md text-center">{{ post.body }}</td>
+      <td class="grid text-center ">
+        <button class="btn btn-info m-3" (click)="selectPost(post)"><i class="bi bi-pencil-square "></i></button>
+        <button class="btn btn-danger" (click)="deletePost(post)"><i class="bi bi-trash-fill"></i></button>
+      </td>
+    </tr>
+    }
+  </tbody>
 </table>

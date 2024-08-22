@@ -1,23 +1,23 @@
 <form class="container bg-secondary mt-4 rounded p-4" [formGroup]="form" (ngSubmit)="submitForm()">
-    <div class="row-mb-3">
-        <label class="col-sm-2 col-form-label" for="userId">User ID</label>
-        <div class="col-sm-12">
-            <input class="form-control" id="userId" type="number" placeholder="User ID" formControlName="userId">
-        </div>
+  <div class="row-mb-3">
+    <label class="col-sm-2 col-form-label" for="userId">User ID</label>
+    <div class="col-sm-12">
+      <input class="form-control" id="userId" type="number" placeholder="User ID" formControlName="userId">
     </div>
-    <div class="row-mb-3">
-        <label class="col-sm-2 col-form-label" for="title">Title</label>
-        <div class="col-sm-12">
-            <input class="form-control" id="title" type="text" placeholder="Some Title" formControlName="title">
-        </div>
+  </div>
+  <div class="row-mb-3">
+    <label class="col-sm-2 col-form-label" for="title">Title</label>
+    <div class="col-sm-12">
+      <input class="form-control" id="title" type="text" placeholder="Some Title" formControlName="title">
     </div>
-    <div>
-        <label class="col-sm-2 col-form-label" for="body">Body</label>
-        <div class="col-sm-12">
-            <input class="form-control" id="body" type="text" placeholder="Some Body" formControlName="body">
-        </div>
+  </div>
+  <div>
+    <label class="col-sm-2 col-form-label" for="body">Description</label>
+    <div class="col-sm-12">
+      <input class="form-control" id="body" type="text" placeholder="Some Description" formControlName="body">
     </div>
-    <div class="d-grid">
-        <button class="btn btn-primary mt-4" type="submit">{{ isEdit ? 'Update' :'Create'}} Post</button>
-    </div>
+  </div>
+  <div class="d-grid">
+    <button class="btn btn-primary mt-4" type="submit">{{ isEdit ? 'Update' :'Create'}} Post</button>
+  </div>
 </form>

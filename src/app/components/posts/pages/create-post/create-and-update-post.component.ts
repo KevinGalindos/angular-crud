@@ -5,14 +5,14 @@ import {
   OnChanges,
   Output,
   SimpleChanges,
-} from '@angular/core';
+} from '@angular/core'
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators,
-} from '@angular/forms';
-import { Post } from '../../../../common/interfaces/posts.interface';
+} from '@angular/forms'
+import { Post } from '../../../../common/interfaces/posts.interface'
 
 @Component({
   selector: 'app-create-and-update-post',
@@ -22,19 +22,19 @@ import { Post } from '../../../../common/interfaces/posts.interface';
   styleUrl: './create-and-update-post.component.sass',
 })
 export class CreateAndUpdatePostComponent implements OnChanges {
-  public form: FormGroup;
-  public isEdit: boolean = false;
+  public form: FormGroup
+  public isEdit: boolean = true;
 
-  @Input() post: Post | undefined;
+  @Input() post: Post | undefined
   @Output() onSubmit: EventEmitter<Post> = new EventEmitter<Post>();
 
   constructor() {
-    this.form = this.initForm();
+    this.form = this.initForm()
   }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['post'] && changes['post'].currentValue) {
-      this.editPost(changes['post'].currentValue);
+      this.editPost(changes['post'].currentValue)
     }
   }
 
@@ -44,16 +44,17 @@ export class CreateAndUpdatePostComponent implements OnChanges {
       userId: new FormControl(null, Validators.required),
       title: new FormControl(null, Validators.required),
       body: new FormControl(null, Validators.required),
-    });
+    })
   }
 
   private editPost(post: Post) {
-    this.isEdit = true;
-    this.form.patchValue(post);
+    this.isEdit = true
+    this.form.patchValue(post)
   }
 
   public submitForm(): void {
-    this.onSubmit.emit(this.form.value);
-    this.form = this.initForm();
+    this.onSubmit.emit(this.form.value)
+    this.form = this.initForm()
+    this.isEdit = false
   }
 }
